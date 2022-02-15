@@ -34,7 +34,7 @@ body{
 	height: 65vh;
 	width: 100vw;
 	opacity: 0.8;
-	background-image:url("media/macbook_mouse.jpg");
+	background-image:url("../media/macbook_mouse.jpg");
 	/*This covers the complete area , even if the image is trimmed/repeated/elongated*/
 	background-size: cover;
 	/*In case image exceeds size of div , this property puts center of image in frame*/
