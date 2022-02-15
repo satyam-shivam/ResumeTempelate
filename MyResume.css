@@ -1,0 +1,878 @@
+body{
+	height: 100%;
+	width: 100%;
+	/*Sometimes body has some predefined margins*/
+	margin: 0px;
+	/*Body had some predefined padding , so was showing some space*/
+	padding: 0px;
+/*	font-size: 30px;
+*/
+}
+
+
+/*-----Media Queries------*/
+
+/*1st breakpoint*/
+
+@media screen and (max-width: 800px){
+
+}
+
+
+/*2nd breakpoint*/
+
+@media screen and (max-width: 600px){
+	html{
+		font-size: 15px;
+	}
+}
+
+/*--------------------------Header----------------------------*/
+/*------------------------------------------------------------*/
+
+#resume-header {
+	height: 65vh;
+	width: 100vw;
+	opacity: 0.8;
+	background-image:url("media/macbook_mouse.jpg");
+	/*This covers the complete area , even if the image is trimmed/repeated/elongated*/
+	background-size: cover;
+	/*In case image exceeds size of div , this property puts center of image in frame*/
+	background-position: center;
+	/*Gives parallax effect  that content is moving over image while scrolling */
+	background-attachment: fixed;
+}
+
+.horizontal-list {
+	/*Removes "dot" from list*/
+	list-style-type: none;
+	/*List has some by default margin , see difference after commenting */
+	margin: 0px;
+}
+
+.horizontal-list li {
+	/*Because list items are by default "block"*/
+		display: inline-block;
+		margin: 0px 10px 10px 0px;
+}
+
+.horizontal-list li a{
+	color: white;
+	font-size: 1.5rem;
+	/*To remove by deafult underline from anchor tag*/
+	text-decoration: none;
+}
+
+/* Created a new class , bacuase following CSS rule is not for all horizontal lists  */
+.nav-menu li a {
+		transition: color 0.5s, border-bottom 1s ;
+}
+
+.nav-menu {
+/*	border: 1px solid red;*/
+/*Q). Why margin is not making any differance ??*/
+/*	margin-top: 20px;*/
+/*Padding makes room for some space from top (*here)*/
+	padding: 20px;
+}
+.nav-menu li a:hover {
+	color: lightgrey;
+	border-bottom: 1px solid grey;
+}
+
+.text-center {
+	text-align: center;
+}
+
+#name-social-container {
+	margin-top: 15vh;
+}
+
+#my-name {
+	font-size: 4rem;
+	letter-spacing: 0.1rem;
+	color: white;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+
+}
+
+#my-name:hover {
+	color: whitesmoke;
+
+}
+
+.social-icons i {
+	padding: 10px;
+	color: lightgrey;
+	font-size: 1.2rem;
+	border-radius: 50%;
+}
+
+.social-icons i:hover {
+	/* vertical-offset , horizontal-offset, blurr-value , spread , color */
+	box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
+
+
+.side-menu {
+	display: none;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	position: absolute;
+	height: auto ;
+	width: 130px;
+	right: 10px;
+	top: 10px;
+/*	border: 1px solid red;*/
+}
+
+
+.side-menu span {
+	color: white;
+	font-size: 2rem;
+/*	border: 1px solid yellow;*/
+}
+
+.side-menu .nav-menu{
+	padding: 0px;
+}
+
+.side-menu ul {
+	/*ul has default vertical margin of about 16px */
+	margin: 0px;
+}
+
+.vertical-menu{
+	list-style-type: none;
+	background-color: rgb(155,157,140);
+	border: 1px solid lightgrey;
+	box-shadow: 0px 0px 6px 4px rgb(155,157,140);
+}
+
+.vertical-menu li {
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.vertical-menu a {
+	color: white;
+	font-size: 1.3rem;
+	text-decoration: none;
+}
+
+/*-----Media Queries------*/
+
+/*1st breakpoint*/
+
+@media screen and (max-width: 800px){
+	.horizontal-list li a{
+		font-size: 1.3rem;
+	}
+}
+
+
+/*2nd breakpoint*/
+
+@media screen and (max-width: 600px){
+	html{
+		font-size: 15px;
+	}
+
+	#name-social-container {
+		margin-top: 12vh;
+	}
+
+	.social-icons i {
+		color: whitesmoke;
+	}
+
+	#top-menu li {
+		display: none;
+	}
+
+	.side-menu {
+		display: flex;
+		height: 30px;
+		width: 30px;
+		overflow: hidden;
+/*		border: 1px solid red;*/
+	}
+
+	.side-menu:hover {
+		width: 130px;
+		height: auto;
+	}
+
+}
+
+
+
+/*----------------------Main  Section------------------------*/
+/*------------------------------------------------------------*/
+
+section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section:nth-child(2n+1) {
+	background-color: white;
+}
+
+section:nth-child(2n) {
+	background-color: whitesmoke;
+}
+
+
+/*----------------------About Section------------------------*/
+/*------------------------------------------------------------*/
+
+#about {
+	/*This is flexible height , increases when more elements are added*/
+	height: auto;
+	width: 100%;
+	/*Making position relative here places about section above header !!!*/
+	position: relative;
+}
+
+/*This is image container ;
+	1. It's width is 13rem , so won't take complete horizontal space(appears on left) , 
+	it's a block level elements although. 
+	2. class "text-center" places image in middle of parent div "my-image" and not in middle of viewport.
+	3. "margin: auto" places div in middle of viewport.*/
+#my-img{
+	height: 13rem;
+	width: 13rem;
+	margin: auto;
+	margin-top: -15vh;
+/*	border: 1px dotted red;*/
+}
+
+#my-img img {
+/*	height: 12.5rem;
+	width: 12.5rem;*/
+	/* Defining dimension of image like this , makes sure that any image is squeezed 
+		down to the size of container. */
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	opacity: 1;
+	box-shadow: 0px 0px 6px 4px grey;
+}
+
+#about p {
+	font-family: monospace;
+	color: grey;
+	font-size: 1.2rem;
+	font-weight: 500;
+	word-spacing: 0.2rem;
+	width: 70%;
+	margin-top: 50px;
+	text-align: justify;
+}
+
+#about p span {
+	font-family: monospace;
+	color: slateblue;
+	font-size: 1.3rem;
+	font-weight: 600;
+	word-spacing: 0.2rem;
+}
+
+
+/*-----Media Queries------*/
+
+/*1st breakpoint*/
+
+@media screen and (max-width: 800px){
+	#about p {
+		width: 80%;
+	}
+}
+
+/*2nd breakpoint*/
+
+@media screen and (max-width: 600px){
+	#about p {
+		width: 90%;
+	}
+}
+
+/*----------------------Skills Section------------------------*/
+/*------------------------------------------------------------*/
+
+/*Section heading classes - common to all section headings*/
+
+.section-heading {
+	width: auto;
+	padding: 20px 10px 10px;
+	font-weight: 400;
+/*	border: 0.5px solid black;*/
+}
+
+.section-heading span {
+	font-size: 2.5rem;
+	color: #2857a4;
+	display: inline-block;
+	padding-top: 10px;
+	margin-right: 0.8rem;
+}
+
+/*------------------------------------------------------------*/
+
+
+#skills {
+	margin-top: 30px;
+}
+
+.skills-display {
+	width: 70%;
+	height: auto;
+/*	border: 1px solid black;*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/*Common margin class*/
+.mb75px {
+	margin-bottom: 75px;
+}
+
+.skills-progress {
+	height: 25px;
+	width: 150px;
+	margin: 20px;
+/*	border: 1px solid lightgrey;*/
+	border-radius: 14px;
+	background-color: lightgrey;
+	box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+/*	border: 0.5px solid black;*/
+}
+
+.skills-progress>div {
+	height: 100%;
+	border-bottom-left-radius: 14px;
+	border-top-left-radius: 14px;
+/*	border: 0.5px solid black;*/
+}
+
+.skills-progress div span {
+	box-sizing: border-box;
+/*	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 15px;*/
+	vertical-align: middle;
+	color: white;
+	font-size: 1rem;
+	margin-left: 20px;
+/*	border: 0.5px solid black;*/
+}
+
+.fifty {
+	width: 50%;
+
+}
+
+.eighty {
+	width: 80%;
+}
+
+.ninety {
+	width: 90%;
+}
+
+.orange {
+	background-color: orange;
+}
+
+.blue {
+	background-color: #9999ff;
+}
+
+.green {
+	background-color: green;
+}
+
+.cyan {
+	background-color: #ff99ff;
+}
+
+
+
+
+/*----------------------Experiance Section------------------------*/
+/*-----------------------------------------------------------------*/
+
+.timeline{
+	width: 80%;
+	position: relative;
+	margin-bottom: 60px;
+/*	border: 1px solid black;*/
+}
+
+.timeline-box:nth-child(2n) { 
+	width: 40%;
+	min-height: 100px;
+	position: relative;
+	left: 5%;
+	margin: 5px;
+/*	border: 1px solid black;*/
+}
+
+.timeline-box:nth-child(2n+1){
+	width: 40%;
+	min-height: 100px;
+	position: relative;
+	left: 53%;
+	margin: 5px;
+/*	border: 1px solid black;*/
+}
+
+
+/*------------------Inside timeline box-----------------------*/
+.box-heading{
+/*	margin-bottom: 0;*/
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	justify-content: space-between;
+/*	border: 0.5px solid black;*/
+}
+
+.box-heading-image {
+	height: 4rem;
+	width: 4rem;
+	background-image: url("media/TCSLogo1.jpg");
+	border-radius: 5px;
+	background-size: cover;
+	background-position: center;
+/*	border: 0.5px solid black;*/
+}
+
+.box-heading-details{
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-end;
+/*	margin-left: 20px;*/
+	/*border: 0.5px solid black;*/
+}
+.your-position {
+	font-size: 1.5rem;
+	color: #2857a4;
+	font-weight: 900;
+	margin: 0px 0px 10px;
+/*	border: 0.5px solid black;*/
+}
+
+.org-name {
+	font-size: 1.25rem;
+	font-weight: 550;
+	color: orange;
+	margin: 0;
+/*	border: 0.5px solid black;*/
+}
+
+.time-period{
+	font-size: 1.2rem;
+	color: grey;
+	margin: 0;
+/*	border: 0.5px solid black;*/
+}
+
+.timeline-box-details {
+	color: grey;
+	text-align: justify;
+	font-size: 1.05rem;
+	line-height: 1.4;
+}
+/*----------------------------------------------------------*/
+
+
+
+.timeline-box:nth-child(2n)::after {
+	content: '';
+	position: absolute;
+	top: 40%;
+	right: -12.5%;
+	border-radius: 50%;
+	height: 0.5rem;
+	width: 0.5rem;
+	background-color: grey;
+	z-index: 1;
+}
+
+.timeline-box:nth-child(2n+1)::after {
+	content: '';
+	position: absolute;
+	top: 40%;
+	left: -9%;
+	border-radius: 50%;
+	height: 0.5rem;
+	width: 0.5rem;
+	background-color: grey;
+	z-index: 1;
+}
+
+.timeline-divider {
+	position: absolute;
+	height: 77%;
+	width: 0;
+	border-left: 3px dashed skyblue;
+	left: 50%;
+	top: 10%;
+	z-index: 0;
+}
+
+.timeline-traveller {
+	position: sticky;
+	/*IMP !!QQ.) This top is wrt to which container ???*/
+	top: 25%;
+	color: #2857a4;
+	/*To adjust plane icon exactly on the divider line*/
+	margin-left: -5px;
+	transform: rotate(90deg);
+	z-index: 5;
+}
+
+
+/*-----Media Queries------*/
+
+/*1st breakpoint*/
+
+@media screen and (max-width: 800px){
+
+	.timeline {
+		width: 90%;
+	}
+	
+	.timeline-box:nth-child(2n) {
+		width: 80%;
+		left: 12%;
+/*		border: 0.5px solid black;*/
+	}
+
+	.timeline-box:nth-child(2n+1){
+		width: 80%;
+		left: 12%;
+/*		border: 0.5px solid black;*/
+	}
+	
+
+	.timeline-divider {
+		position: absolute;
+		height: 77%;
+		width: 0;
+		border-left: 3px dashed skyblue;
+		left: 5%;
+		top: 10%;
+		z-index: 0;
+	}
+
+	.timeline-box::after {
+		left: -10.5% !important;
+		right: auto;
+	}
+}
+
+
+/*2nd breakpoint*/
+
+@media screen and (max-width: 600px){
+	.timeline {
+		width: 100%;
+	}
+}
+
+/*----------------------Education Section------------------------*/
+/*------------------------------------------------------------*/
+
+#education .box-heading-image {
+	height: 4rem;
+	width: 4rem;
+	background-image: url("media/HITLogo.png");
+	border-radius: 5px;
+	background-size: cover;
+	background-position: center;
+/*	border: 0.5px solid black;*/
+}
+
+/*Note : All other properties have been taken care in Experiance section  because structure is same.*/
+
+
+
+/*----------------------Portfolio Section------------------------*/
+/*------------------------------------------------------------*/
+
+.portfolio-container {
+	width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+/*    border: 1px solid black;*/
+}
+
+.portfolio-image-container {
+/*	box-sizing: border-box;*/
+	max-width: 300px;
+	max-height: 300px;
+/*	height: auto;*/
+	overflow: hidden;
+	margin: 30px;
+/*	background-size: cover;
+	background-repeat: no-repeat;*/
+	position: relative;
+/*	border: 1px solid black;*/
+}
+
+.portfolio-image-container img {
+	height: 100%;
+	width: 100%;
+/*	border: 1px solid yellow;*/
+}
+
+.portfolio-details {
+	box-sizing: border-box;
+	/*"On Hover" psudo class comes in with transition*/
+	/* which_properties, transition_time, style delay */
+	/* You may also comma separate value sets to do different transitions on different properties:
+	Example :
+	.element {
+  				transition: background 0.2s ease,
+              	padding 0.8s linear;
+			}
+	*/
+
+	/*
+		For the most part, the order of the values does not matter — unless a delay is specified. 
+		If you specify a delay, you must first specify a duration. The first value that the browser 
+		recognizes as a valid time value will always represent the duration. Any subsequent valid time
+	 	value will be parsed as the delay.*/
+
+
+	transition: all 0.5s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: transparent;
+	text-align: center;
+	font-size: 30px;
+	padding: 10px;
+/*	border: 1px solid red;*/
+}
+
+.portfolio-image-container:hover {
+	box-shadow: 0 0 20px #74ADC8;
+}
+
+
+
+/*.portfolio-image-container:hover .portfolio-details {
+	background-color: #80808078;
+	color: white;
+/*	border: 1px solid black;*/
+
+
+.portfolio-details:hover {
+	background-color: #80808078;
+	color: white;
+}
+
+
+
+/*----------------------Contact Section------------------------*/
+/*------------------------------------------------------------*/
+
+#contact {
+	background : linear-gradient(to right ,#2857a4, #403066);
+	height: auto;
+}
+
+#contact span {
+	color: lightgrey ;
+}
+
+.contact-container {
+	width: 80%;
+	margin-bottom: 40px;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+/*	border: 1px solid white;*/
+}
+
+
+.write-us {
+	width: 46%;
+/*	border: 0.5px solid white;*/
+}
+
+.write-us input, textarea {
+	box-sizing: border-box;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-size: 1rem;
+	border-bottom: 3px solid white;
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 10px;
+	color: white;
+	background-color: transparent;
+}
+
+.write-us input:focus {
+	outline: none;
+/*	border: none;*/
+}
+
+.write-us textarea:focus {
+		outline: none;
+}
+
+.write-us .submit-message {
+	display:  flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.write-us button {
+	box-sizing: border-box;
+	border: 2px solid white;
+	width: 130px;
+	padding: 8px;
+	font-weight: 700;
+	color: white;
+	background-color: transparent;
+	cursor: pointer;
+    transition: 0.2s all;
+
+/*	margin-left: auto;*/
+
+}
+
+.write-us button:active {
+	        transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+}
+
+.reach-us {
+	width: 46%;
+/*	border: 0.5px solid white;*/
+}
+
+
+.reach-us span {
+	margin-right: 10px;
+	text-align: left;
+}
+
+.reach-us div {
+	margin-top: 10px;
+}
+
+.reach-us h3 {
+	font-weight: 900;
+}
+
+
+
+.social-icons-container {
+	margin-bottom: 50px;
+}
+
+.social-icons-container .social-icons i {
+	color: white;
+	font-size: 1.3rem;
+}
+
+.social-icons-container  li {
+	margin: 0px 20px;
+}
+
+
+
+/*-----Media Queries------*/
+
+/*1st breakpoint*/
+
+@media screen and (max-width: 800px){
+
+	.write-us {
+		width: 80%;
+		margin-bottom: 75px;
+/*		border: 0.5px solid white;*/
+	}
+
+	.reach-us {
+		width: 80%;
+/*		border: 0.5px solid white;*/
+	}
+
+	.contact-container {
+		justify-content: center;
+	}
+
+	.write-us button {
+		width: 40%;
+		padding: 6px;
+		font-weight: 700;
+	}
+
+	.social-icons i {
+		font-size: 1.1rem;
+	}
+
+	.social-icons-container  li {
+		margin: 0px 10px;
+	}
+}
+
+
+/*2nd breakpoint*/
+
+@media screen and (max-width: 600px){
+	.write-us {
+		width: 90%;
+		margin-bottom: 75px;
+/*		border: 0.5px solid white;*/
+	}
+
+	.reach-us {
+		width: 90%;
+/*		border: 0.5px solid white;*/
+	}
+
+	.contact-container {
+		justify-content: center;
+	}
+
+	.write-us button {
+		width: 40%;
+		padding: 6px;
+		font-weight: 700;
+	}
+
+	.social-icons i {
+		font-size: 1rem;
+	}
+
+	.social-icons-container  li {
+		margin: 0px 5px;
+	}
+}
