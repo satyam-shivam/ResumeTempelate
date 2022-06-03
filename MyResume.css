@@ -577,7 +577,7 @@ section:nth-child(2n) {
 	}
 
 	.timeline-box::after {
-		left: -10.5% !important;
+		left: -11% !important;
 		right: auto;
 	}
 }
