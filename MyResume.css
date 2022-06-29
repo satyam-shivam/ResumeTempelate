@@ -360,6 +360,7 @@ section:nth-child(2n) {
 	border-bottom-left-radius: 14px;
 	border-top-left-radius: 14px;
 /*	border: 0.5px solid black;*/
+
 }
 
 .skills-progress div span {
@@ -374,18 +375,38 @@ section:nth-child(2n) {
 /*	border: 0.5px solid black;*/
 }
 
-.fifty {
-	width: 50%;
-
+.cplusplus{
+	width: 0%;
 }
 
-.eighty {
-	width: 80%;
+.html{
+	width: 0%;
 }
 
-.ninety {
-	width: 90%;
+.css{
+	width: 0%;
 }
+
+.javascript{
+	width: 0%;
+}
+
+.java{
+	width: 0%;
+}
+
+.andriod{
+	width: 0%;
+}
+
+.ios{
+	width: 0%;
+}
+
+.nodeJS{
+	width: 0%;
+}
+
 
 .orange {
 	background-color: orange;
@@ -448,7 +469,7 @@ section:nth-child(2n) {
 .box-heading-image {
 	height: 4rem;
 	width: 4rem;
-	background-image: url("media/TCSLogo1.jpg");
+	background-image: url("../media/TCSLogo1.jpg");
 	border-radius: 5px;
 	background-size: cover;
 	background-position: center;
@@ -597,7 +618,7 @@ section:nth-child(2n) {
 #education .box-heading-image {
 	height: 4rem;
 	width: 4rem;
-	background-image: url("media/HITLogo.png");
+	background-image: url("../media/HITLogo.png");
 	border-radius: 5px;
 	background-size: cover;
 	background-position: center;
