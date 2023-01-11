@@ -469,7 +469,7 @@ section:nth-child(2n) {
 .box-heading-image {
 	height: 4rem;
 	width: 4rem;
-	background-image: url("../media/TCSLogo1.jpg");
+	background-image: url("./media/TCSLogo1.jpg");
 	border-radius: 5px;
 	background-size: cover;
 	background-position: center;
@@ -618,7 +618,7 @@ section:nth-child(2n) {
 #education .box-heading-image {
 	height: 4rem;
 	width: 4rem;
-	background-image: url("../media/HITLogo.png");
+	background-image: url("./media/HITLogo.png");
 	border-radius: 5px;
 	background-size: cover;
 	background-position: center;
